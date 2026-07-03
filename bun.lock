@@ -876,6 +876,14 @@
         "@types/react": "^19.2.14",
       },
     },
+    "packages/forge/blocks/plivo": {
+      "name": "@typebot.io/plivo-block",
+      "dependencies": {
+        "@typebot.io/forge": "workspace:*",
+        "@typebot.io/lib": "workspace:*",
+        "ky": "^1.2.4",
+      },
+    },
     "packages/forge/blocks/posthog": {
       "name": "@typebot.io/posthog-block",
       "version": "1.0.0",
@@ -971,6 +979,7 @@
         "@typebot.io/open-router-block": "workspace:*",
         "@typebot.io/openai-block": "workspace:*",
         "@typebot.io/perplexity-block": "workspace:*",
+        "@typebot.io/plivo-block": "workspace:*",
         "@typebot.io/posthog-block": "workspace:*",
         "@typebot.io/qrcode-block": "workspace:*",
         "@typebot.io/segment-block": "workspace:*",
@@ -3231,6 +3240,8 @@
     "@typebot.io/perplexity-block": ["@typebot.io/perplexity-block@workspace:packages/forge/blocks/perplexity"],
 
     "@typebot.io/playwright": ["@typebot.io/playwright@workspace:packages/playwright"],
+
+    "@typebot.io/plivo-block": ["@typebot.io/plivo-block@workspace:packages/forge/blocks/plivo"],
 
     "@typebot.io/posthog-block": ["@typebot.io/posthog-block@workspace:packages/forge/blocks/posthog"],
 

@@ -27,6 +27,8 @@ import { openAIBlock } from "@typebot.io/openai-block";
 import { openAIBlockSchema } from "@typebot.io/openai-block/schemas";
 import { perplexityBlock } from "@typebot.io/perplexity-block";
 import { perplexityBlockSchema } from "@typebot.io/perplexity-block/schemas";
+import { plivoBlock } from "@typebot.io/plivo-block";
+import { plivoBlockSchema } from "@typebot.io/plivo-block/schemas";
 import { posthogBlock } from "@typebot.io/posthog-block";
 import { posthogBlockSchema } from "@typebot.io/posthog-block/schemas";
 import { qrCodeBlock } from "@typebot.io/qrcode-block";
@@ -59,6 +61,7 @@ export const forgedBlockSchemas = {
   [deepSeekBlock.id]: deepSeekBlockSchema,
   [blinkBlock.id]: blinkBlockSchema,
   [gmailBlock.id]: gmailBlockSchema,
+  [plivoBlock.id]: plivoBlockSchema,
 } as const;
 
 export const forgedBlockSchema = z.discriminatedUnion("type", [
@@ -81,5 +84,6 @@ export const forgedBlockSchema = z.discriminatedUnion("type", [
   deepSeekBlockSchema,
   blinkBlockSchema,
   gmailBlockSchema,
+  plivoBlockSchema,
 ]);
 export type ForgedBlock = z.infer<typeof forgedBlockSchema>;

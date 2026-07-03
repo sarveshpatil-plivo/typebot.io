@@ -1,0 +1,19 @@
+---
+title: Plivo
+---
+
+With the Plivo block, you can send an SMS message from your Plivo account during a conversation.
+
+## Authentication
+
+The block needs your Plivo `Auth ID` and `Auth Token`. You can find both on the [Plivo console](https://cx.plivo.com/dashboard/).
+
+## Send SMS
+
+This action sends an SMS message. It requires:
+
+- `From` — a Plivo phone number in E.164 format (for example +14155551234), a short code, or an approved sender ID.
+- `To` — the recipient phone number in E.164 format.
+- `Message` — the text to send.
+
+You can optionally save the returned message UUID into a variable.

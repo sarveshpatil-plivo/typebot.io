@@ -13,6 +13,7 @@ import { nocodbBlock } from "@typebot.io/nocodb-block";
 import { openRouterBlock } from "@typebot.io/open-router-block";
 import { openAIBlock } from "@typebot.io/openai-block";
 import { perplexityBlock } from "@typebot.io/perplexity-block";
+import { plivoBlock } from "@typebot.io/plivo-block";
 import { posthogBlock } from "@typebot.io/posthog-block";
 import { qrCodeBlock } from "@typebot.io/qrcode-block";
 import { segmentBlock } from "@typebot.io/segment-block";
@@ -39,6 +40,7 @@ export const forgedBlocks = {
   [deepSeekBlock.id]: deepSeekBlock,
   [blinkBlock.id]: blinkBlock,
   [gmailBlock.id]: gmailBlock,
+  [plivoBlock.id]: plivoBlock,
 };
 export type ForgedBlockDefinition =
   (typeof forgedBlocks)[keyof typeof forgedBlocks];

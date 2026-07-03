@@ -144,6 +144,7 @@
                 "editor/blocks/integrations/nocodb",
                 "editor/blocks/integrations/posthog",
                 "editor/blocks/integrations/segment",
+                "editor/blocks/integrations/plivo",
                 "editor/blocks/integrations/zendesk",
                 "editor/blocks/integrations/blink",
                 "editor/blocks/integrations/gmail"

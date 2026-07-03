@@ -27,6 +27,8 @@ import { openAIBlock } from "@typebot.io/openai-block";
 import openAIBlockHandlers from "@typebot.io/openai-block/handlers";
 import { perplexityBlock } from "@typebot.io/perplexity-block";
 import perplexityBlockHandlers from "@typebot.io/perplexity-block/handlers";
+import { plivoBlock } from "@typebot.io/plivo-block";
+import plivoBlockHandlers from "@typebot.io/plivo-block/handlers";
 import { posthogBlock } from "@typebot.io/posthog-block";
 import posthogBlockHandlers from "@typebot.io/posthog-block/handlers";
 import { qrCodeBlock } from "@typebot.io/qrcode-block";
@@ -58,4 +60,5 @@ export const forgedBlockHandlers = {
   [deepSeekBlock.id]: deepSeekBlockHandlers,
   [blinkBlock.id]: blinkBlockHandlers,
   [gmailBlock.id]: gmailBlockHandlers,
+  [plivoBlock.id]: plivoBlockHandlers,
 };

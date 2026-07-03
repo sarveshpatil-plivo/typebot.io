@@ -1,8 +1,6 @@
 import { createActionHandler } from "@typebot.io/forge";
 import { ky } from "@typebot.io/lib/ky";
 import { parseUnknownError } from "@typebot.io/lib/parseUnknownError";
-import { isDefined } from "@typebot.io/lib/utils";
-import { HTTPError } from "ky";
 import { sendSms } from "../actions/sendSms";
 
 export const sendSmsHandler = createActionHandler(sendSms, {
@@ -35,25 +33,13 @@ export const sendSmsHandler = createActionHandler(sendSms, {
 
       const uuid = message_uuid?.[0];
       if (uuid)
-        options.responseMapping
-          ?.filter((m) => isDefined(m.variableId))
-          .forEach((m) =>
-            variables.set([{ id: m.variableId as string, value: uuid }]),
-          );
+        options.responseMapping?.forEach((m) => {
+          if (m.variableId) variables.set([{ id: m.variableId, value: uuid }]);
+        });
     } catch (err) {
-      if (err instanceof HTTPError) {
-        logs.add(
-          await parseUnknownError({
-            err,
-            context: "While sending Plivo SMS",
-          }),
-        );
-      } else {
-        console.error(err);
-        logs.add(
-          "Unexpected error while sending Plivo SMS. Check function logs for details.",
-        );
-      }
+      logs.add(
+        await parseUnknownError({ err, context: "While sending Plivo SMS" }),
+      );
     }
   },
 });
